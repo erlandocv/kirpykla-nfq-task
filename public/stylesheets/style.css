@@ -1,0 +1,74 @@
+@font-face{
+  font-family: "Oldie", serif;
+  src: url("/html/dist/fonts/OldStandard-Regular.ttf");
+}
+body {
+  font-family: "Old Standard TT", serif;
+  background:floralwhite;
+}
+#navigacija {
+  text-align: center;
+  padding: 25px;
+  box-shadow: 2px 2px 8px rgba(0,0, 0.5);
+  top:0;
+  width:100%;
+  z-index: 1;
+  background:#343a40;
+  align-content: center;
+  text-align: center;
+  max-height: 100px;
+}
+
+#navbarLogo {
+  color: #3fa46a;
+}
+#navSocial {
+  color: #3fa46a;
+}
+#navbarLogo:hover {
+  color:floralwhite;
+  transition:1s;
+}
+#navSocial:hover {
+  color:floralwhite;
+  transition: 1s;
+  background: #343a40;
+}
+div.container {
+  padding-top: 35px;
+  margin-top: 145px;
+  height: 700px;
+  overflow:auto;
+  padding-bottom: 35px;
+  position: relative;
+}
+#linkNavi {
+  transition: 0.3s ease;
+  background: #343a40;
+  text-decoration: none;
+  padding:16px 0;
+  font-size: 20px;
+  letter-spacing: 10px;
+  text-transform: capitalize;
+  transition:1s;
+}
+#linkNavi a{
+  color:floralwhite;
+  text-decoration: none;
+}
+#linkNavi:hover {
+
+  font-size: 25px;
+  padding:15px;
+  text-transform: uppercase;
+  transition: 1s;
+  
+}
+#navbarMeniu > li {
+  padding-left:30px;
+  padding-right:30px;
+  list-style: none;
+}
+#navSocial {
+  float:right;
+}

@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title Kirpykla
+    link(rel='stylesheet', href='./stylesheets/style.css')
+    link(rel="stylesheet", href="/stylesheets/bootstrap.css")
+    script(type="text/javascript" src="/javascripts/jquery.js")
+    script(type="text/javascript" src="./javascripts/moment-with-locales.js")
+    link(rel="stylesheet" href="/fontawesome/css/all.css")
+    link(rel="stylesheet" href="/fontawesome/css/brands.css")
+    link(rel="stylesheet" href="/fontawesome/css/solid.css")
+    link(rel="stylesheet" href="/fullcalendar/fullcalendar.css")
+    script(src="fullcalendar/fullcalendar.js")
+    link(rel="stylesheet" href="/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.css")
+    script(type="text/javascript" src="tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js")
+  body
+    include header.pug
+    div.container  
+      block content
