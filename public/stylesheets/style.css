@@ -36,11 +36,11 @@ body {
 }
 div.container {
   padding-top: 35px;
-  margin-top: 145px;
+  margin-top: 10px;
   height: 700px;
-  overflow:auto;
   padding-bottom: 35px;
   position: relative;
+  width:960px;
 }
 #linkNavi {
   transition: 0.3s ease;
@@ -52,6 +52,9 @@ div.container {
   text-transform: capitalize;
   transition:1s;
 }
+#linkNavi.active {
+  font-size:35px;
+}
 #linkNavi a{
   color:floralwhite;
   text-decoration: none;
@@ -61,8 +64,7 @@ div.container {
   font-size: 25px;
   padding:15px;
   text-transform: uppercase;
-  transition: 1s;
-  
+  transition: 1s; 
 }
 #navbarMeniu > li {
   padding-left:30px;
@@ -71,4 +73,24 @@ div.container {
 }
 #navSocial {
   float:right;
+}
+#nameDiv{
+  max-width: 300px;
+  min-width: 300px;
+}
+.registrationButton {
+  width: 100%;
+}
+.somethingSomething {
+  width: 100%;
+  margin-bottom: 35px;
+}
+#firstOption {
+  color:#999;
+}
+.tableTop {
+  font-weight: bold;
+}
+i.fas.fa-user-minus {
+  color: red;
 }

@@ -1,0 +1,45 @@
+extends layout
+
+block content
+	h1 Kirpėjoms
+	hr
+	.barber(ng-controller="BarberController")
+			h3 Kirpėjos
+			hr
+			.row
+				.col-md-6
+					.row(ng-repeat="barber in barbers" ng-cloak)
+						.col-md-8.border-bottom
+							p {{ barber.name }}
+						.col-md-4
+							button(type="button" ng-click="deleteBarber(barber._id)").btn.btn-danger Pašalinti
+				.col-md-6.form-group
+					form(ng-submit="addBarber()")
+						.form-group
+							input.form-control#barberName(name="barberName" ng-model="newBarber.name" ng-required placeholder="Naujo kirpėjo/os vardas")
+							button.btn.btn-primary(type="submit") Pridėti kirpeją
+			hr
+			h3 Rezervacijos
+			hr
+			.form-group
+				.row
+					.col-md-6
+						select.form-control(ng-model="filter.barber" ng-options="barber.name for barber in barbers")
+							option#firstOption(value="" disabled hidden selected) -Rūšiuoti pagal kirpėją-
+					.col-md-6
+						input.form-control(ng-model="filter.search" placeholder="Ieškoti rezervacijos")
+				br
+				.row
+					.col-md-3.tableTop Vardas:
+					.col-md-2.text-center.tableTop Diena:
+					.col-md-2.text-center.tableTop Laikas:
+					.col-md-3.text-center.tableTop Kirpėja(s):
+					.col-md-2.text-center.tableTop Ištrinti:
+				br
+				.row.border-bottom(ng-repeat="reservation in reservations | filter: filter.barber | filter:search")
+					.col-md-3 {{reservation.name}}
+					.col-md-2.text-center {{reservation.time | date:'MM-dd'}}
+					.col-md-2.text-center {{reservation.time | date:'HH:mm' }}
+					.col-md-3.text-center {{reservation.barber.name}}
+					.col-md-2.text-center(ng-controller="ReservationController")
+						i.fas.fa-user-minus(type="button" ng-click="deleteReservation(reservation._id)") 

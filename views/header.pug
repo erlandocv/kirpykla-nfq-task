@@ -5,12 +5,10 @@ nav.navbar.navbar-fixed-top.bavbar-dark.navbar-expand-lg#navigacija
         span.navbar-toggler-icon
     #navbarText.collapse.navbar-collapse
         ul#navbarMeniu.navbar-nav.mx-auto.text-center
-            li#linkNavi(class="nav-item")
+            li#linkNavi.nav-item
                 a.nav-link(href="/") Klientams <span class="sr-only">Home</span>
-            li#linkNavi.nav-item
-                a.nav-link(href="/") Kirpejoms
-            li#linkNavi.nav-item
-                a.nav-link(href="/") About
+            li#linkNavi.nav-item(class = antras)
+                a.nav-link(href="/kirpejoms") Kirpejoms
         ul.nav.navbar-nav.justify-content-center.flex-row.fex-nowrap
             li.nav-item
                 a#navSocial.nav-link(target="_blank" href="https://www.facebook.com/erlandasz/")

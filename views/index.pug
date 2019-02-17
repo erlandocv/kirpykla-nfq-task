@@ -1,28 +1,31 @@
 extends layout
 block content
-  div.registracija
-    div.row 
-        div.col-sm-6 
-            div.form-group 
-                input.form-control(type="text" placeholder="Vardas")
-    div.row 
-        div.col-sm-6 
-            div.form-group 
-                div.input-group.date#datetimepicker2(data-target-input="nearest")
-                    input.form-control.datetimepicker-input(type="text" data-target="#datetiomepicker2")
-                    div.input-group-append(data-target="#datetimepicker2" data-toggle="datetimepicker")
-                        div.input-group-text
-                            i.fas.fa-clock#laikrodukas(style="font-size:16px; color:#3fa46a")
-    div.row
-        .col-sm-6
-            input.btn.btn-primary(type="submit" value="Registruotis")
-        script. 
-            $(function () {
-                $("#datetimepicker2").datetimepicker({ 
-                    locale: "lt",
-                    daysOfWeekDisabled: [0, 6],
-                    disabledHours: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 20, 21, 22, 23, 24],
-                    enabledHours: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
-                    stepping: 15
-                });
-            });
+  .reservation(ng-controller="ReservationController")
+    form(ng-submit="saveReservation()")
+            .row(ng-show="!reservationSuccess")
+                .form-group 
+                    input.form-control(type="text" placeholder="Vardas" ng-model="reservation.name" name="name")
+                    p.text-danger {{ error }}
+                .col-md-2(ng-controller="BarberController")
+                    select.somethingSomething.selectpicker.form-control(ng-model="filter.barber" ng-options="barber.name for barber in barbers")
+                        option(value="" disabled selected hidden) Kirpeja(s)
+                .col-md-4
+                    .well.well-sm(uib-datepicker ng-model="reservation.date" datepicker-options="datePickerOptions" required)
+                .col-md-2
+                    .well.well-sm(ng-show="reservation.date" minute-step="[15]" uib-timepicker show-meridian="false" ng-model="reservation.time" datepicker-options="timePickerOptions")
+                
+            .form-group 
+            .row
+                    
+                    .col.registrationButton
+                    input.registrationButton.btn.btn-primary(type="submit" value="Registruotis" name="Done") 
+            .form-group
+            .row        
+    .row(ng-show="reservationSuccess")
+            div.col-md-3.text-success Rezervacija sėkminga!
+            div.col-md-3 {{ reservation.name }}
+            div.col-md-3 {{ reservation.time | date:"yyyy-MM-dd HH:mm" }}
+            div.col-md-3 {{ barber.name}}
+    hr
+
+       
