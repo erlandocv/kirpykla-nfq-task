@@ -5,21 +5,22 @@ block content
             .row(ng-show="!reservationSuccess")
                 .col-md-6.col-xs-12
                     .form-group 
-                        .col-md-4
+                        .row-md-4 1.
                             input.form-control(type="text" placeholder="Vardas" ng-model="reservation.name" name="name" required)
                             p.text-danger {{ error }}
-                        .col-md-4
+                        .row-md-4 2.
                             select.somethingSomething.selectpicker.form-control(ng-model="reservation.barber" ng-options="barber._id as barber.name for barber in barbers" required)
                                 option(value="" disabled selected hidden) Kirpeja(s)
-                        .col-md-4
-                            .well.well-sm(uib-datepicker ng-model="reservation.date" datepicker-options="datePickerOptions" required)
-                
+                        .row-md-4 4.
+                            select.somethingSomething.selectpicker.form-control(ng-model="reservation.hour" required)
+                                option(value="" disabled selected hidden) Rinktis laiką
+                                option(ng-repeat="time in allTimes" ng-disabled="!time.available") {{ time.available ? time.time : time.time + ' - reserved -'}}
                 .col-md-6.col-xs-12
-                    select.somethingSomething.selectpicker.form-control(ng-model="reservation.hour" required)
-                        option(value="" disabled selected hidden) Rinktis laiką
-                        option(ng-repeat="time in allTimes" ng-disabled="!time.available") {{ time.available ? time.time : time.time + ' - reserved -'}}
+                    .col-md-4 3.
+                        .well.well-sm(uib-datepicker ng-model="reservation.date" datepicker-options="datePickerOptions" required)
 
-            .row
+
+            .col
                 .form-group 
                     .col.registrationButton
                         input.registrationButton.btn.btn-primary(type="submit" value="Registruotis" name="Done") 
