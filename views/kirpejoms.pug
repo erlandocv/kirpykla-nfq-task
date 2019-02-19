@@ -8,7 +8,7 @@ block content
 			hr
 			.row
 				.col-md-6
-					.row(ng-repeat="barber in barbers" ng-cloak)
+					.row.cucciGang(ng-repeat="barber in barbers" ng-cloak)
 						.col-md-8.border-bottom
 							p {{ barber.name }}
 						.col-md-4
@@ -17,7 +17,7 @@ block content
 					form(ng-submit="addBarber()")
 						.form-group
 							input.form-control#barberName(name="barberName" ng-model="newBarber.name" ng-required placeholder="Naujo kirpėjo/os vardas")
-							button.btn.btn-primary(type="submit") Pridėti kirpeją
+							button.btn.btn-primary.cucciGang(type="submit") Pridėti kirpeją
 			hr
 			h3 Rezervacijos
 			hr
@@ -34,7 +34,7 @@ block content
 					.col-md-2.text-center.tableTop Laikas:
 					.col-md-3.text-center.tableTop Kirpėja(s):
 					.col-md-2.text-center.tableTop Ištrinti:
-				.row.border-bottom(ng-repeat="r in reservations | filter:filter.search | filter: filter.barber")
+				.row.border-bottom.cucciGang(ng-repeat="r in reservations | filter:filter.search | filter: filter.barber")
 					.col-md-3 {{r.name}}
 					.col-md-2.text-center {{r.time | date:'MM-dd'}}
 					.col-md-2.text-center {{r.time | date:'HH:mm' }}
