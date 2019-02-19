@@ -20,17 +20,13 @@ block content
                         .well.well-sm(uib-datepicker ng-model="reservation.date" datepicker-options="datePickerOptions" required)
 
 
-            .col
-                .form-group 
+                .col
                     .col.registrationButton
-                        input.registrationButton.btn.btn-primary(type="submit" value="Registruotis" name="Done") 
-            .form-group
-            .row        
+                            input.registrationButton.btn.btn-primary(type="submit" value="Registruotis" name="Done")      
     .row(ng-show="reservationSuccess")
-            div.col-md-3.text-success Rezervacija sėkminga!
-            div.col-md-3 {{ reservation.name }}
-            div.col-md-3 {{ reservation.time | date:"yyyy-MM-dd HH:mm" }}
-            div.col-md-3 {{ barber.name}}
+            div.col-md-4.text-success Rezervacija sėkminga!
+            div.col-md-4 {{ reservation.name }}
+            div.col-md-4 {{ reservation.time}}
     hr
 
        

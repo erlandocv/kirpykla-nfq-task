@@ -37,10 +37,11 @@ body {
 div.container {
   padding-top: 35px;
   margin-top: 10px;
-  height: 700px;
   padding-bottom: 35px;
+  height: 80%;
   position: relative;
   width:960px;
+  overflow: auto;
 }
 #linkNavi {
   transition: 0.3s ease;

@@ -46,7 +46,7 @@ app.controller('ReservationController', function ReservationController($scope, $
         .then(function() {
             $scope.reservationSuccess = true;
         }).catch(function(err) {
-            $scope.error = 'Something went wrong. Reservation exists.'
+            $scope.error = 'Registracija jau egzistuoja'
         });
    }
 
