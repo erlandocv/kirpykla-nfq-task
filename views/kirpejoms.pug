@@ -24,22 +24,20 @@ block content
 			.form-group
 				.row
 					.col-md-6
-						select.form-control(ng-model="filter.barber" ng-options="barber.name for barber in barbers")
-							option#firstOption(value="" disabled hidden selected) -Rūšiuoti pagal kirpėją-
+						select.form-control(ng-model="filter.barber" ng-options="barber._id as barber.name for barber in barbers")
+							option#firstOption(ng-value="" selected) Visi
 					.col-md-6
 						input.form-control(ng-model="filter.search" placeholder="Ieškoti rezervacijos")
-				br
 				.row
 					.col-md-3.tableTop Vardas:
 					.col-md-2.text-center.tableTop Diena:
 					.col-md-2.text-center.tableTop Laikas:
 					.col-md-3.text-center.tableTop Kirpėja(s):
 					.col-md-2.text-center.tableTop Ištrinti:
-				br
-				.row.border-bottom(ng-repeat="reservation in reservations | filter: filter.barber | filter:search")
-					.col-md-3 {{reservation.name}}
-					.col-md-2.text-center {{reservation.time | date:'MM-dd'}}
-					.col-md-2.text-center {{reservation.time | date:'HH:mm' }}
-					.col-md-3.text-center {{reservation.barber.name}}
-					.col-md-2.text-center(ng-controller="ReservationController")
-						i.fas.fa-user-minus(type="button" ng-click="deleteReservation(reservation._id)") 
+				.row.border-bottom(ng-repeat="r in reservations | filter:filter.search | filter: filter.barber")
+					.col-md-3 {{r.name}}
+					.col-md-2.text-center {{r.time | date:'MM-dd'}}
+					.col-md-2.text-center {{r.time | date:'HH:mm' }}
+					.col-md-3.text-center {{r.barber.name}}
+					.col-md-2.text-center
+						i.fas.fa-user-minus(type="button" ng-click="deleteReservation(r._id)") 

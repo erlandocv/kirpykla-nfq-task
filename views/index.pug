@@ -3,22 +3,26 @@ block content
   .reservation(ng-controller="ReservationController")
     form(ng-submit="saveReservation()")
             .row(ng-show="!reservationSuccess")
-                .form-group 
-                    input.form-control(type="text" placeholder="Vardas" ng-model="reservation.name" name="name")
-                    p.text-danger {{ error }}
-                .col-md-2(ng-controller="BarberController")
-                    select.somethingSomething.selectpicker.form-control(ng-model="filter.barber" ng-options="barber.name for barber in barbers")
-                        option(value="" disabled selected hidden) Kirpeja(s)
-                .col-md-4
-                    .well.well-sm(uib-datepicker ng-model="reservation.date" datepicker-options="datePickerOptions" required)
-                .col-md-2
-                    .well.well-sm(ng-show="reservation.date" minute-step="[15]" uib-timepicker show-meridian="false" ng-model="reservation.time" datepicker-options="timePickerOptions")
+                .col-md-6.col-xs-12
+                    .form-group 
+                        .col-md-4
+                            input.form-control(type="text" placeholder="Vardas" ng-model="reservation.name" name="name" required)
+                            p.text-danger {{ error }}
+                        .col-md-4
+                            select.somethingSomething.selectpicker.form-control(ng-model="reservation.barber" ng-options="barber._id as barber.name for barber in barbers" required)
+                                option(value="" disabled selected hidden) Kirpeja(s)
+                        .col-md-4
+                            .well.well-sm(uib-datepicker ng-model="reservation.date" datepicker-options="datePickerOptions" required)
                 
-            .form-group 
+                .col-md-6.col-xs-12
+                    select.somethingSomething.selectpicker.form-control(ng-model="reservation.hour" required)
+                        option(value="" disabled selected hidden) Rinktis laiką
+                        option(ng-repeat="time in allTimes" ng-disabled="!time.available") {{ time.available ? time.time : time.time + ' - reserved -'}}
+
             .row
-                    
+                .form-group 
                     .col.registrationButton
-                    input.registrationButton.btn.btn-primary(type="submit" value="Registruotis" name="Done") 
+                        input.registrationButton.btn.btn-primary(type="submit" value="Registruotis" name="Done") 
             .form-group
             .row        
     .row(ng-show="reservationSuccess")
