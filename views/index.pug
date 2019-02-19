@@ -11,7 +11,7 @@ block content
                         .row-md-4 2.
                             select.somethingSomething.selectpicker.form-control(ng-model="reservation.barber" ng-options="barber._id as barber.name for barber in barbers" required)
                                 option(value="" disabled selected hidden) Kirpeja(s)
-                        .row-md-4 4.
+                        .row-md-4(ng-show="reservation.date") 4.
                             select.somethingSomething.selectpicker.form-control(ng-model="reservation.hour" required)
                                 option(value="" disabled selected hidden) Rinktis laiką
                                 option(ng-repeat="time in allTimes" ng-disabled="!time.available") {{ time.available ? time.time : time.time + ' - reserved -'}}
