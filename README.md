@@ -1,5 +1,4 @@
-# FinalBoss
-Sukurkite README, kuriame būtų vartotojo vadovas kaip naudotis sistema.
+# https://final-boss-app.herokuapp.com/
 
 Puslapis klientams:
   1. Suvesti kliento vardą;
@@ -12,3 +11,5 @@ Puslapis kirpėjoms:
     bei kliento vardą), taip pat rezervacijas galima ištrinti.
 
 Šiuo atveju registruotis ar prisijungti nereikia nei klientams nei kirpėjoms.
+
+
