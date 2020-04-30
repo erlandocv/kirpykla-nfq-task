@@ -13,7 +13,7 @@
     "express-async-wrap": "^1.0.0",
     "fullcalendar": "^3.10.0",
     "http-errors": "~1.6.2",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "mongoose": "^5.4.12",
     "morgan": "~1.9.0",
