@@ -17,7 +17,7 @@
     "moment": "^2.24.0",
     "mongoose": "^5.4.12",
     "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11"
+    "pug": "3.0.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",
